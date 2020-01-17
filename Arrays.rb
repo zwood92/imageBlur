@@ -1,17 +1,22 @@
 class Image
-def initialize 
+attr_accessor :array, :image
+def initialize(array)
   # insert array and variables
-  @ary = [[0, 0, 0, 0],
-        [0, 1, 0, 0],
-        [0, 0, 0, 1],
-        [0, 0, 0, 0]]
+@array = array
+array = [image]
 end
 
 def output_image
-  puts @ary
+  @array.each do |image|
+    puts image.each { |p| p }.join(" ")
+  end
 end
 
-
 end
-image = Image.new
+image = Image.new([
+  [0, 0, 0, 0],
+  [0, 1, 0, 0],
+  [0, 0, 0, 1],
+  [0, 0, 0, 0]
+])
 image.output_image
